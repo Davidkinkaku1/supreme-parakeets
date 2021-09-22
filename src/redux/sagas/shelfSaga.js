@@ -20,21 +20,36 @@ function* fetchShelf(action) {
     try {
   
         // passes all items from the server to the payload 
-        const response = yield axios.post('/api/shelf', action.payload);
+         yield axios.post('/api/shelf', action.payload);
     
         // automatically log items in after shelf
-         yield put({ type: 'FETCH_SHELF' });
+         yield put({ type: 'FETCH_SHELF'});
 
       } catch (error) {
         console.log('Error with posting item of shelf:', error);
       }
   }
 
+  function* deleteShelfItem (action) {
+    try {
+  
+        // passes all items from the server to the payload 
+        yield axios.delete(`/api/shelf/${action.payload}`);
+    
+        // automatically log items in after shelf
+         yield put({ type: 'FETCH_SHELF' });
+
+      } catch (error) {
+        console.log('Error with delete item of shelf:', error);
+      }
+  }
+
+
 
   function* shelfSaga() {
     yield takeLatest('FETCH_SHELF', fetchShelf);
-    yield takeLatest('ADD_TO_SHELF', addShelfItem)
-    
+    yield takeLatest('ADD_TO_SHELF', addShelfItem);
+    yield takeLatest('DELETE_ITEM', deleteShelfItem);
   }
   
 
