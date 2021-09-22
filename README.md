@@ -40,17 +40,17 @@ Our client, Prime Digital Academy: Room 2, has asked for an app to simulate the 
 
 We recommend working in groups of 4 or 6 and pair programming for this project. Each pair should take on one of the following features. You will want to identify any tasks that need to be finished in a particular order as a group to avoid merge conflicts. Each of the following features should be on a separate route.
 
-##### Display all Items
+[X] ##### Display all Items
 
 The Shelf page (`ShelfPage.js`at `/shelf`) should show all of the items stored in the database in a list or table.
 
-##### Add Items to the Shelf
+[X] ##### Add Items to the Shelf
 
 The Shelf page (`ShelfPage.js` at `/shelf`) should allow a user to add a new item to the database (which should immediately appear in the list).
 
 > NOTE: Image url should be a full path to an existing image on the web. You should not attempt to implement image upload for this.
 
-##### Delete Items from the Shelf
+[] ##### Delete Items from the Shelf
 
 An authenticated user should be able to delete items from the shelf if they were the one who added the item to the shelf.
 
